@@ -45,7 +45,7 @@ if not raw_config["auth"].get("secret_key"):
 password = config["auth"]["password"]
 PASSWORD_HASH = pbkdf2_sha256.hash(password)
 
-app = FastAPI(title="YunPan", docs_url=None, redoc_url=None)
+app = FastAPI(title="私人云", docs_url=None, redoc_url=None)
 
 BASE_DIR = Path(__file__).parent
 app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
@@ -100,12 +100,12 @@ def fmt_ts(ts: float) -> str:
 
 @app.get("/login", response_class=HTMLResponse)
 async def login_page(request: Request):
-    return templates.TemplateResponse("login.html", {"request": request})
+    return templates.TemplateResponse(request, "login.html")
 
 
 @app.get("/", response_class=HTMLResponse)
 async def index_page(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request, "index.html")
 
 
 @app.post("/api/token")
@@ -329,7 +329,7 @@ def start():
 
     print(f"""
   ╔══════════════════════════════════════════╗
-  ║           ☁️  YunPan 云盘                 ║
+  ║           ☁️  私人云                       ║
   ╠══════════════════════════════════════════╣
   ║  Local:   http://localhost:{port:<5}        ║
   ║  Network: {local_url:<35}║

@@ -1,4 +1,4 @@
 #!/bin/bash
 cd "$(dirname "$0")"
-echo "☁️  YunPan 启动中..."
+echo "☁️  私人云 启动中..."
 python3 server.py

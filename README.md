@@ -1,4 +1,4 @@
-# ☁️ YunPan 云盘
+# ☁️ 私人云
 
 一个自托管的个人文件服务器，将你的电脑硬盘变成可远程访问的私有云盘。手机浏览器即可上传、下载、预览文件，无需安装任何 App。
 
@@ -22,7 +22,7 @@
 
 ```bash
 # 1. 克隆或下载项目
-cd yunpan
+cd private-cloud
 
 # 2. 安装依赖
 pip3 install -r requirements.txt
@@ -41,7 +41,7 @@ server:
   port: 8080            # 监听端口
 
 storage:
-  root_dir: /home/user/yunpan/uploads   # 文件存储根目录
+  root_dir: /home/user/private-cloud/uploads   # 文件存储根目录
 
 auth:
   password: admin123    # 登录密码（务必修改）
@@ -58,11 +58,11 @@ python3 server.py
 
 ```
   ╔══════════════════════════════════════════╗
-  ║           ☁️  YunPan 云盘                 ║
+  ║           ☁️  私人云                       ║
   ╠══════════════════════════════════════════╣
   ║  Local:   http://localhost:8080          ║
   ║  Network: http://192.168.1.5:8080        ║
-  ║  Root:    /home/user/yunpan/uploads      ║
+  ║  Root:    /home/user/private-cloud/uploads      ║
   ╚══════════════════════════════════════════╝
 ```
 
@@ -87,7 +87,7 @@ ngrok http 8080
 ## 项目结构
 
 ```
-yunpan/
+private-cloud/
 ├── server.py             # FastAPI 后端
 ├── config.yaml           # 配置文件
 ├── requirements.txt      # Python 依赖

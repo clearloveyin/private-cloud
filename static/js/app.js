@@ -1,4 +1,4 @@
-const TOKEN_KEY = "yunpan_token";
+const TOKEN_KEY = "private_cloud_token";
 var _m = {};
 
 function getToken() {
